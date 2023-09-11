@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    float presupuesto,gine,trau,pedia;
+    cout<<"ingrese el presupuesto"<<endl;cin>>presupuesto;
+    gine=presupuesto*0.4;
+    trau=presupuesto*0.3;
+    pedia=presupuesto*0.3;
+    cout<<" el presupuesto de ginecologia es: "<<gine<<endl;
+    cout<<" el presupuesto de traumatologia es: "<<trau<<endl;
+    cout<<" el presupuesto de pediatria es:"<<pedia<<endl;
+    return 0;
+}
