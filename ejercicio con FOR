@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int N, M;
+	float suma=0, promedio;
+	//Pedir y validar valores
+	do {
+		cout << "Ingresa el valor de N: ";
+		cin >> N;
+	} while (N < 0);
+	do {
+		cout << "Ingresa el valor de M: ";
+		cin >> M;
+	} while (M < N);
+	//Un ciclo for
+	for (int i = N; i <= M; i++)//Incializacion, condicion, incremento
+		suma = suma + i;
+	//Mostrar los resultados
+	cout << "La suma es: " << suma << endl;
+	promedio = suma / (M - N + 1);
+	cout << "El promedio es: " << promedio;
+}
