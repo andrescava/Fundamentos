@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+//prototipo
+void   mayorde(int a, int b, int c,int &valor);
+
+
+int main()
+{
+    int num1, num2,valor,num3;
+    do {
+        cout << "Ingresar el primer numero :"; cin >> num1;
+    }while (num1 < 0);
+        do {
+        cout << "Ingresar el segundo numero :"; cin >> num2;
+    }   while (num2 < 0);
+        do{
+        cout << "Ingresar el tercer numero :"; cin >> num3;
+        } while (num3 < 0);
+        mayorde(num1, num2, num3,valor);
+       cout << "El numero mayor es :" << valor;
+    }
+//Declaracion de la funcion//es & es parametro por referencia 
+void mayorde(int a, int b, int c,int &valor)
+{
+    int mayor;
+    if ((a > b) && (a > c))
+        mayor = a;
+    if ((b > a) && (b > c))
+        mayor = b;
+    if ((c > a) && (c > b))
+        mayor = c;
+    if ((a==b) && (c== a))
+        mayor = a;
+    valor = mayor;
+
+
+}
