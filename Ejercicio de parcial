@@ -1,0 +1,20 @@
+/*Autor Yanine Saavedra Rodriguez
+ejercico 3 Una empresa de venta de intercambios de autos necesita un programa
+con una funcion que calcule y muestre el precio final de un un producto*/
+#include <iostream>
+using namespace std;
+double preciofinal(double coste,double margen);
+
+int main(){
+    double coste,margen;
+    
+    cout<<"Ingrese el precio original del producto :";cin>>coste;
+    cout<<"Ingrese el porcentaje del margen del producto :";cin>>margen;
+    double resultado=preciofinal( coste,margen);
+    cout<<"El precio final es:"<<resultado<<endl;
+    
+    return 0;
+          }
+    double preciofinal(double coste,double margen){
+    return coste*(1+(margen/100));   
+    }
