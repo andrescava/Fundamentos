@@ -1,0 +1,79 @@
+#include <iostream>
+#include <string>
+#define MAX 100
+
+using namespace std;
+
+void cargar(string nombre[], int n, float nota[]);
+void mostrar(string nombre[], int n, float nota[]);
+void burbujanombre(string nombre[], int n, float nota[]);
+void burbujanota(string nombre[], int n, float nota[]);
+
+
+
+int main() {
+	string Nombre[MAX];
+	float Nota[MAX];
+	int n;
+	//solicitar datos para validacion
+	do {
+		cout << "Ingrese el numero de estudiantes (Maximo 100): ";
+		cin >> n;
+	} while ((n < 0) || (n > 100));
+	cargar(Nombre, n, Nota);
+	cout << "La lista de estudiantes es: " << endl;
+	burbujanombre(Nombre, n, Nota);
+	cout << "La lista de estudiantes por nota es: " << endl;
+	burbujanota(Nombre, n, Nota);
+	mostrar(Nombre, n, Nota);
+	return 0;
+}
+void cargar(string nombre[], int n, float nota[]){
+	cout << "Ingresar los datos Nombre \t Nota";
+	for (int i = 0; i < n; i++)
+	{
+		cin >> nombre[i];
+		cout << "\t";
+		cout << nota[i];
+	}
+}
+void mostrar(string nombre[], int n, float nota[]){
+	cout << "Nombre \t Nota: " << endl;
+	for (int i = 0; i < n; i++)
+	{
+		cout << nombre[i];
+		cout << "\t";
+		cout << nota[i];
+	}
+}
+void burbujanombre(string nombre[], int n, float nota[]){
+	string aux;
+	int aux2;
+	for (int i = 0; i < n - 1; i++)
+		for (int j = i; j < n; j++)
+			if (nombre[i] > nombre[j])
+			{
+				aux = nombre[i];
+				aux2 = nota[i];
+				nombre[i] = nombre[j];
+				nota[i] = nota[j];
+				nombre[j] = aux;
+				nota[j] = aux2;
+			}
+}
+void burbujanota(string nombre[], int n, float nota[]){
+	string aux;
+	float aux2;
+	for (int i = 0; i < n - 1; i++)
+		for (int j = i; j < n; j++)
+			if (nota[i] > nota[j])
+			{
+				aux = nombre[i];
+				aux2 = nota[i];
+				nombre[i] = nombre[j];
+				nota[i] = nota[j];
+				nombre[j] = aux;
+				nota[j] = aux2;
+			}
+}
+
